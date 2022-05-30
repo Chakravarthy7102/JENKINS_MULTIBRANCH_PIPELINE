@@ -10,5 +10,14 @@ pipeline {
         sh 'echo "Hello World from the Pipeline"'
       }
     }
+    stage("ONLY MASTER STAGE"){
+        when{
+            branch "master"
+        }
+
+        steps{
+            sh 'cat Jenkinsfile'
+        }
+    }
   }
 }
